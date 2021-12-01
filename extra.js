@@ -7,7 +7,7 @@ function task1() {
   console.log(`Выбран "${name}", цена за штуку ${price} тугриков`);
 }
 
-setTimeout(task1, 5000);
+task1();
 
 // Задание 2
 function task2() {
@@ -17,8 +17,6 @@ function task2() {
 
     if (ordered > total) {
       console.log("На складе недостаточно товаров!");
-    } else if (total <= 0) {
-      console.log("На складе нет товаров!");
     } else if (ordered <= 0) {
       console.log("Сделайте заказ!");
     } else {
@@ -33,7 +31,7 @@ function task2() {
   orderProducts(0, 0);
 }
 
-setTimeout(task2, 6000);
+task2();
 
 // Задание 3
 function task3() {
@@ -52,7 +50,7 @@ function task3() {
   alert(message);
 }
 
-// task3();
+task3();
 
 // Задание 4
 function task4() {
@@ -76,33 +74,54 @@ function task4() {
   }
 }
 
-// task4();
+task4();
 
+// Задание 5
 function task5() {
-  let country = prompt("Укажите вашу страну") / i;
+  let country = prompt("Укажите вашу страну").toLowerCase();
   let price;
   switch (country) {
-    case "Китай":
+    case "китай":
       price = 100;
       break;
-    case "Чили":
+    case "чили":
       price = 250;
       break;
-    case "Австралия":
+    case "австралия":
       price = 170;
       break;
-    case "Индия":
+    case "индия":
       price = 80;
       break;
-    case "Ямайка":
+    case "ямайка":
       price = 120;
       break;
     default:
       alert("В вашей стране доставка не доступна");
       break;
   }
-
-  console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+  alert(`Доставка в ${country} будет стоить ${price} кредитов`);
 }
 
 task5();
+
+// Задание 6
+function task6() {
+  let input;
+  let total = 0;
+
+  while (input !== null) {
+    input = prompt("Введите число");
+
+    if (isNaN(input)) {
+      alert("Было введено не число, попробуйте еще раз");
+      continue;
+    }
+
+    total += input * 1;
+  }
+
+  alert(`Общая сумма чисел равна ${total}`);
+}
+
+task6();
